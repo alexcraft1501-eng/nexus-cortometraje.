@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEXUS | Cortometraje de Terror Psicológico</title>
-    <!-- Fuentes tipográficas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -76,6 +75,25 @@
             font-family: var(--font-headers);
         }
 
+        /* ESTILOS DEL PÓSTER */
+        .poster-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .poster-container img {
+            max-width: 100%;
+            width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 0 25px rgba(255, 0, 122, 0.4);
+            border: 1px solid rgba(255, 0, 122, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .poster-container img:hover {
+            transform: scale(1.02);
+        }
+
         .logline {
             font-size: 1.2rem;
             font-weight: 600;
@@ -85,16 +103,33 @@
             padding-left: 15px;
         }
 
-        .video-container {
-            width: 100%;
-            margin-top: 30px;
-            border: 1px solid rgba(255, 0, 122, 0.3);
-            box-shadow: 0 0 20px rgba(255, 0, 122, 0.1);
+        /* ESTILOS DE VIDEOS */
+        .video-wrapper {
+            margin-top: 40px;
         }
 
-        .video-container video {
+        .video-wrapper h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--accent-magenta);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Aspect Ratio 16:9 para YouTube */
+            height: 0;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            display: block;
+            height: 100%;
         }
 
         .gallery-grid {
@@ -169,23 +204,38 @@
         <br>
         <p class="logline">Un brillante pero arrogante director creativo al borde del colapso descubre que la revolucionaria consola que está desarrollando ha comenzado a devorar la realidad física, obligando a su asistente a tomar una decisión drástica.</p>
         <p>Leo Vance es un prodigio de la animación obsesionado con perfeccionar "NEXUS", un motor de renderizado de última generación. Aislado en su estudio, su mente comienza a fracturarse. El terror comienza cuando el agotamiento extremo rompe la barrera entre la pantalla y la vida real. Los objetos cotidianos sufren glitches visuales y la consola empieza a "quitarle las texturas" al propio cuarto. Maya, su asistente técnica, será la única capaz de intervenir frente a la ruptura psicótica.</p>
+        
+        <!-- SECCIÓN DEL PÓSTER -->
+        <div class="poster-container">
+            <!-- REEMPLAZA "poster_nexus.png" CON EL NOMBRE REAL DE TU IMAGEN -->
+            <img src="poster_nexus.png" alt="Póster Oficial de NEXUS">
+        </div>
     </section>
 
-    <section id="video">
-        <h2>Cortometraje</h2>
-        <div class="video-container">
-            <!-- Reproductor configurado para tu archivo local -->
-            <video controls>
-                <source src="CORTOMETRAJE.mp4" type="video/mp4">
-                Tu navegador no soporta la reproducción de video.
-            </video>
+    <!-- SECCIÓN DE VIDEOS DE YOUTUBE -->
+    <section id="audiovisual">
+        <h2>Material Audiovisual</h2>
+
+        <div class="video-wrapper">
+            <h3>Cortometraje</h3>
+            <div class="video-container">
+                <!-- REEMPLAZA "TU_ID_PELICULA" CON EL ID DE TU VIDEO EN YOUTUBE -->
+                <iframe src="https://www.youtube.com/embed/TU_ID_PELICULA" title="NEXUS Cortometraje" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <h3>Video Explicativo</h3>
+            <div class="video-container">
+                <!-- REEMPLAZA "TU_ID_EXPLICATIVO" CON EL ID DE TU VIDEO EN YOUTUBE -->
+                <iframe src="https://www.youtube.com/embed/TU_ID_EXPLICATIVO" title="NEXUS Video Explicativo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
     </section>
 
     <section id="galeria">
         <h2>Diseño de Producción</h2>
         <div class="gallery-grid">
-            <!-- Rutas directas basadas en tu carpeta -->
             <div class="gallery-item"><img src="model_sheet_leo.png" alt="Model Sheet Leo"></div>
             <div class="gallery-item"><img src="model_sheet_maya.png" alt="Model Sheet Maya"></div>
             <div class="gallery-item"><img src="storyboard_escena3.png" alt="Storyboard Escena 3"></div>
@@ -198,15 +248,15 @@
         <div class="tech-sheet">
             <div>
                 <ul>
-                    <li><span>Duración:</span> 01:00 min</li>
+                    <li><span>Duración:</span> 01:00 min (Aprox)</li>
                     <li><span>Formato:</span> 4K UHD, Aspect Ratio 2.39:1</li>
-                    <li><span>Técnica:</span> Animación 3D</li>
+                    <li><span>Técnica:</span> Animación Híbrida 2D/3D</li>
                     <li><span>Fecha de Producción:</span> Mayo 2026</li>
                 </ul>
             </div>
             <div>
                 <ul>
-                    <li><span>Autores:</span> Johant Enrique Carrillo Martínez Ana Del Carmen Villanueva Gaytan</li>
+                    <li><span>Autor:</span> Johant Enrique Carrillo Martínez</li>
                     <li><span>Asesor:</span> César Octavio Guerra Guerrero</li>
                     <li><span>Institución:</span> Universidad Autónoma del Carmen (UNACAR)</li>
                     <li><span>Herramientas:</span> Blender, Google Gemini (Concept Art/Texto)</li>
@@ -215,14 +265,13 @@
         </div>
 
         <div class="logos-container">
-            <!-- Rutas directas a los logos de tu carpeta (asegúrate de que el nombre del logo de UNACAR coincida exactamente con el archivo que subas si está recortado) -->
             <img src="LOGO_IMAGOTIPO_UNACAR_CON_REGISTRO_DE_MARCA_BLANCO.png" alt="Logo Universidad Autónoma del Carmen">
             <img src="logo-IDM.png" alt="Logo IDM">
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Johant Enrique Carrillo Martínez Ana Del Carmen Villanueva Gaytan. Todos los derechos reservados. Proyecto Académico.</p>
+        <p>&copy; 2026 Johant Enrique Carrillo Martínez. Todos los derechos reservados. Proyecto Académico.</p>
     </footer>
 
 </body>
